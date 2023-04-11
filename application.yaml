@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Apllication
+metadata:
+  name: webapp
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/SpidyParker/Argo-Trial.git
+    targetRevision: HEAD 
+    path: webapp
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: poc
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
