@@ -13,4 +13,4 @@ spec:
         image: alpine
         command: ["sh",  "exit 1"]
       restartPolicy: Never
-  backoffLimit: 4
+  backoffLimit: 1
