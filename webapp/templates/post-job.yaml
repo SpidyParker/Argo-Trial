@@ -9,8 +9,8 @@ spec:
   template:
     spec:
       containers:
-      - name: whalesay
-        image: docker/whalesay
-        command: ["cowsay",  "exit 1"]
+      - name: alpine
+        image: alpine
+        command: ["sh",  "exit 1"]
       restartPolicy: Never
   backoffLimit: 4
