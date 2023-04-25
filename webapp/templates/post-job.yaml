@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: whalesay
-        image: docker/whalesayqq
-        command: ["cowsay",  "This is a Kubernetes Job!"]
+        image: docker/whalesay
+        command: ["cowsay",  "exit 1"]
       restartPolicy: Never
   backoffLimit: 4
