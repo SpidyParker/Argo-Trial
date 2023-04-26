@@ -4,13 +4,13 @@ metadata:
   generateName: post-sync-job
   annotations:
     argocd.argoproj.io/hook: PostSync
-    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
     spec:
       containers:
-      - name: alpine
-        image: alpine
-        command: ["sh",  "exit 1"]
+      - name: whalesay
+        image: docker/whalesay
+        command: ["cowsay",  "This is a Kubernetes Job!"]
       restartPolicy: Never
-  backoffLimit: 1
+  backoffLimit: 4
